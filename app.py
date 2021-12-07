@@ -22,4 +22,14 @@ def memberlist():
     conn.close()
     return render_template('memberlist.html', rs=rs)
 
+@app.route('/member_view/<string:id>/')
+def member_view(id):  #mid를 경로로 설정하고 매개변수로 넘겨줌
+    conn = getconn()
+    cur = conn.cursor()
+    sql = "SELECT * FROM member WHERE mid = '%s' " % (id)
+    cur.execute(sql)
+    rs = cur.fetchone()  #해당 1개의 자료를 반환받음
+    conn.close()
+    return render_template('member_view.html', rs=rs)
+
 app.run(debug=True)
