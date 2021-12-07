@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome~ mysite!</title>
+    <title>회원 목록</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -18,12 +18,15 @@
             </nav>
         </header>
         <section>
-            <h1>회원 관리 커뮤니티입니다.</h1>
-            <h2>Have a nice Day!!</h2>
-            <img src="{{ url_for('static', filename='images/activity.jpg') }}" id="pic">
+            <h1>회원 목록</h1>
+            <table>
+                <tr>
+                    <th>아이디</th><th>패스워드</th><th>이름</th><th>나이</th><th>가입일</th>
+                </tr>
+                {{ rs }}
+
+            </table>
         </section>
     </div>
-
-    <script src="{{ url_for('static', filename='js/main_js.js') }}"></script>
 </body>
 </html>

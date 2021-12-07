@@ -7,8 +7,13 @@ nav ul li{display: inline-block; margin: 10px;
    border-top:3px solid #333; padding: 10px;}
 nav ul li a{text-decoration: none; color: #000}
 nav ul li:hover{background-color: #eee}
+
+/* index 스타일 */
 section{text-align: center}
 section h2{margin-bottom: 20px;}
 
+/* memberlist 스타일 */
+section table{width: 600px; margin: 0 auto;}
+section h1{margin-bottom: 20px;}
+section table, th{border: 1px solid #ccc; border-collapse:collapse}
 
-/* index 스타일 */
