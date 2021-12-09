@@ -7,6 +7,12 @@
 </head>
 <body>
     <div id="container">
+        {% if session == null %} <!--session이 없다면 즉, 로그인하지 않았다면 -->
+        <script>
+            alert('먼저 로그인해 주세요');
+            location.href = '/login/';  //경로이동 객체(location.href)
+        </script>
+        {% endif %}
         {% include 'navbar.html' %}
         <section>
             <h1>회원 목록</h1>
