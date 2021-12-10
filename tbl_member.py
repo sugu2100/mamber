@@ -41,6 +41,15 @@ def select_member():
         print(i)
     conn.close()
 
+def delete_member():   # 회원 정보 삭제
+    conn = getconn()
+    cur = conn.cursor()
+    sql = "DELETE FROM member"
+    cur.execute(sql)
+    conn.commit()
+    conn.close()
+
 #create_table()  #호출
 #insert_member()
+delete_member()
 select_member()
