@@ -126,4 +126,36 @@ def member_edit(id):
         conn.close()
         return render_template('member_edit.html', rs=rs)
 
+# 게시판 목록
+@app.route('/boardlist/')
+def boardlist():
+    conn = getconn()
+    cur = conn.cursor()
+    sql = "SELECT * FROM board ORDER BY bno DESC"
+    cur.execute(sql)
+    rs = cur.fetchall()
+    conn.close()
+    return render_template('boardlist.html', rs=rs)
+
+@app.route('/writing/', methods = ['GET', 'POST'])
+def writing():
+    if request.method == "POST":
+        #자료 전달받음
+        title = request.form['title']
+        content = request.form['content']
+        mid = session.get('userID')  #글쓴이 - 로그인한 mid(세션 권한이 있음)
+
+        #db에 글 추가
+        conn = getconn()
+        cur = conn.cursor()
+        sql = "INSERT INTO board(title, content, mid) VALUES ('%s', '%s', '%s')" \
+              % (title, content, mid)
+        cur.execute(sql)
+        conn.commit()
+        print("게시글 추가")
+        conn.close()
+        return redirect(url_for('boardlist'))
+    else:
+        return render_template('writing.html')
+
 app.run(debug=True)

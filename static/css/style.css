@@ -51,3 +51,14 @@ section .tbl_edit{width: 450px;}
 section .tbl_edit input{width: 200px; height: 30px}
 section .tbl_edit input[type='submit']{width: 100px; height: 30px}
 section .tbl_edit input[type='reset']{width: 100px; height: 30px}
+
+/* boardlist 스타일 */
+section .btn_write{text-align: right; margin: 15px 200px;}
+section .btn_write input{padding: 10px 20px;}
+
+/* writing 스타일 */
+section .writing{width: 600px; margin:0 auto;}
+section .writing input[type='text']{width: 550px; height: 30px}
+section .writing textarea{width: 550px; height: 300px;}
+section .writing input[type='submit'],
+  [type='reset']{width: 100px; height: 30px;}
