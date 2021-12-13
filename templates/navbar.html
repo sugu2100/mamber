@@ -3,14 +3,14 @@
         <ul>
         {% if session %} <!-- session이 있으면 -->
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('logout') }}">({{ ssid }}님)로그아웃</a></li>
-            <li><a href="{{ url_for('register') }}">회원가입</a></li>
+            <li><a href="{{ url_for('logout') }}">({{ session['userID'] }}님)로그아웃</a></li>
             <li><a href="{{ url_for('memberlist') }}">회원목록</a></li>
+            <li><a href="#">게시판</a></li>
         {% else %}
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('login') }}">로그인</a></li>
             <li><a href="{{ url_for('register') }}">회원가입</a></li>
-            <li><a href="{{ url_for('memberlist') }}">회원목록</a></li>
+            <li><a href="#">게시판</a></li>
         {% endif %}
         </ul>
     </nav>
