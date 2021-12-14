@@ -158,4 +158,15 @@ def writing():
     else:
         return render_template('writing.html')
 
+# 게시글 상세보기
+@app.route('/board_view/<int:bno>/')
+def board_view(bno):
+    conn = getconn()
+    cur = conn.cursor()
+    sql = "SELECT * FROM board WHERE bno = %s" % (bno)
+    cur.execute(sql)
+    rs = cur.fetchone()
+    conn.close()
+    return render_template('board_view.html', rs=rs)
+
 app.run(debug=True)

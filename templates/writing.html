@@ -7,6 +7,12 @@
 </head>
 <body>
     <div id="container">
+        {% if not session['userID'] %}
+        <script>
+            alert('로그인이 필요합니다');
+            location.href = '/login/'
+        </script>
+        {% endif %}
         {% include 'navbar.html' %}
         <section>
             <h1>게시글 쓰기</h1>

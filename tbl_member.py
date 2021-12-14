@@ -59,6 +59,6 @@ def delete_member():   # 회원 정보 삭제
 
 #create_table()  #호출
 #drop_table()
-insert_member()
+# insert_member()
 #delete_member()
 select_member()
