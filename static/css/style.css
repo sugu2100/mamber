@@ -54,7 +54,7 @@ section .tbl_edit input[type='reset']{width: 100px; height: 30px}
 
 /* boardlist 스타일 */
 section .tbl_bo_list{width:700px; margin:0 auto;}
-section .tbl_bo_list tr td:nth-child(2){text-align:left;}
+section .tbl_bo_list tr td:nth-child(2){text-align:left; padding-left:20px;}
 section .tbl_bo_list a{text-decoration:none; color:#000;}
 section .tbl_bo_list a:hover{text-decoration:underline;}
 section .btn_write{text-align: right; margin: 15px 200px;}
@@ -64,7 +64,7 @@ section .btn_write input{padding: 10px 20px;}
 section .writing{width: 600px; margin:0 auto;}
 section .writing input[type='text']{width: 550px; height: 30px}
 section .writing textarea{width: 550px; height: 300px;}
-section .writing input[type='submit'],
+section .writing input[type='button'],
   [type='reset']{width: 100px; height: 30px;}
 
 /* board_view 스타일 */
@@ -72,5 +72,10 @@ section .tbl_bo_view{width:600px; margin:0 auto;}
 section .tbl_bo_view input[type='text']{width:550px; height:25px;}
 section .tbl_bo_view textarea{width:550px; height:300px;}
 section .tbl_bo_view a{color:#00f;}
+
+/* board_edit 스타일 */
+section .tbl_bo_view input[type='submit'],
+   input[type='reset']{width:100px; height:30px;}
+
 
 

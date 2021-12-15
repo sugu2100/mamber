@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>게시글 쓰기</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/checkWriting.js') }}"></script>
 </head>
 <body>
     <div id="container">
@@ -16,7 +17,8 @@
         {% include 'navbar.html' %}
         <section>
             <h1>게시글 쓰기</h1>
-            <form action="{{ url_for('writing') }}" method="post" class="writing">
+            <form action="{{ url_for('writing') }}" method="post"
+                  class="writing" name="writeForm">
                 <table>
                     <tr>
                         <td>
@@ -30,12 +32,11 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="submit" value="글쓰기">
+                            <input type="button" value="글쓰기" onclick="checkWriting()">
                             <input type="reset" value="취소">
                         </td>
                     </tr>
                 </table>
-
             </form>
         </section>
     </div>

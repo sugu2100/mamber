@@ -30,9 +30,10 @@
                 <tr>
                     <td colspan="2">
                         <a href="{{ url_for('boardlist') }}">목록</a>
-                        {% if session['userID'] == rs[4] %}
-                        <a href="#">수정</a>
-                        <a href="#">삭제</a>
+                        {% if session['userName'] == rs[4] %}
+                        <a href="{{ url_for('board_edit', bno=rs[0]) }}">수정</a>
+                        <a onclick="return confirm('정말로 삭제하시겠습니까?')"
+                           href="{{ url_for('board_del', bno=rs[0]) }}">삭제</a>
                         {% endif %}
                     </td>
                 </tr>
