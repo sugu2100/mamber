@@ -57,8 +57,8 @@ def delete_member():   # 회원 정보 삭제
     conn.commit()
     conn.close()
 
-#create_table()  #호출
+create_table()  #호출
 #drop_table()
 # insert_member()
 #delete_member()
-select_member()
+#select_member()
